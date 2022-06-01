@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Stack, Typography } from '@mui/material'
+import { Avatar, Rating, Stack, Typography } from '@mui/material'
 
 import useStyles from '../styles'
 
@@ -9,7 +9,7 @@ const ReviewCard = ({ name, image, date, rating, review }) => {
   return (
     <div className={classes.reviewCard}>
       <Avatar src={image} sx={{ width: 100, height: 100, margin: '1rem 0' }} />
-      <Stack direction='column' spacing={2}>
+      <Stack direction='column' spacing={2} mb={1}>
         <Typography variant='subtitle2'>
           {review}
         </Typography>
@@ -20,6 +20,7 @@ const ReviewCard = ({ name, image, date, rating, review }) => {
           {date}
         </Typography>
       </Stack>
+      <Rating value={rating} readOnly />
     </div>
   )
 }

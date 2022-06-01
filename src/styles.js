@@ -28,9 +28,20 @@ export default makeStyles(theme => ({
       }
     }
   },
+  datePicker: {
+    '& .MuiInputBase-input': {
+      color: 'var(--color-primary)',
+      height: '50px',
+      border: '1px solid var(--color-primary)',
+      borderRadius: '5px',
+      padding: '0 0.75rem',
+      cursor: 'pointer',
+    },
+  },
   form: {
-    width: '90%',
+    width: '50%',
     display: 'flex',
+    flexDirection: 'column',
     gap: '1rem',
     margin: '1rem 0',
     '@media screen and (max-width: 800px)': {
@@ -205,5 +216,21 @@ export default makeStyles(theme => ({
         color: 'var(--color-primary)'
       }
     }
-  }
+  },
+    /*
+  * ==============
+  * Modal
+  * ==============
+  */
+ backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    width: '100vw',
+    height: '100vh',
+    display: 'grid',
+    placeItems: 'center',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    backdropFilter: 'blur(2px)',
+  },
 }))

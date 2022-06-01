@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Stack, Typography } from '@mui/material'
 
 import { ProductData as products } from '../product-data'
-import useStyles from '../components/styles'
+import useStyles from '../styles'
 
 const Product = () => {
   const classes = useStyles()
