@@ -1,0 +1,48 @@
+import { createTheme } from '@mui/material'
+
+export const theme = createTheme({
+    typography: {
+        fontFamily: 'var(--font-body)',
+        h1 : { fontFamily: 'var(--font-heading)' },
+        h2 : { fontFamily: 'var(--font-heading)' },
+        h3 : { fontFamily: 'var(--font-heading)' },
+        h4 : { fontFamily: 'var(--font-heading)' },
+        h5 : { fontFamily: 'var(--font-heading)' },
+        h6 : { fontFamily: 'var(--font-heading)' },
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                contained: {
+                    height: '55px',
+                    backgroundColor: 'var(--color-primary)',
+                    color: 'var(--color-light)',
+                    marginRight: '1rem',            
+                    transition: '0.3s ease',
+                    textTransform: 'capitalize',
+                    '&:hover': {
+                        transform: 'translateY(-3px)',
+                        backgroundColor: 'var(--color-primary-dark)'
+                    }
+                },
+                outlined: {
+                    backgroundColor: 'var(--color-light)',
+                    color: 'var(--color-primary)',
+                    transition: '0.3s ease',
+                    textTransform: 'capitalize',
+                    '&:hover': {
+                        transform: 'translateY(-5px)',
+                        backgroundColor: 'var(--color-light)',
+                        color: 'var(--color-primary)',
+                    }
+                }
+            }
+        },
+    },
+    palette: {
+        text: {
+            primary: '#8484F0',
+            secondary: '#757575',
+        }
+    }
+})
