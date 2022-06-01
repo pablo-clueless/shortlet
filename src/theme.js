@@ -14,10 +14,9 @@ export const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 contained: {
-                    height: '55px',
+                    height: '45px',
                     backgroundColor: 'var(--color-primary)',
-                    color: 'var(--color-light)',
-                    marginRight: '1rem',            
+                    color: 'var(--color-light)',            
                     transition: '0.3s ease',
                     textTransform: 'capitalize',
                     '&:hover': {

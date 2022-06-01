@@ -2,13 +2,13 @@ import React from 'react'
 import { Grid, Typography } from '@mui/material'
 
 import ProductCard from './ProductCard'
-import useStyles from './styles'
+import useStyles from '../styles'
 import { ProductData as products } from '../product-data'
 
 const ProductLayout = () => {
   const classes = useStyles()
   return (
-    <div className={classes.productLayout}>
+    <section className={classes.layout}>
       <Typography variant="h2">
         Closests to your location
       </Typography>
@@ -22,7 +22,7 @@ const ProductLayout = () => {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </section>
   )
 }
 

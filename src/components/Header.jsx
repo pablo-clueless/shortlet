@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Stack, TextField, Typography } from '@mui/material'
 
-import Navbar from './Navbar'
-import useStyles from './styles'
+import { InputField, Navbar } from './index'
+import useStyles from '../styles'
 
 const Header = () => {
   const classes = useStyles()
@@ -18,7 +18,6 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Navbar />
       <Stack direction='column' mt={12} px={2}>
         <Typography variant='h2' color='textPrimary'>
           Affordable Most Reliable
@@ -34,7 +33,7 @@ const Header = () => {
         </Typography>
         <Stack direction='row' alignItems='center' spacing={2} my={2}>
           <form className={classes.form} onSubmit={handleSearch}>
-            <TextField className={classes.inputField} type='text' label='Search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for short-lets' />
+            <InputField className={classes.inputField} type='text' label='Search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for short-lets' />
             <Button type='submit' variant='contained'>
               Search
             </Button>

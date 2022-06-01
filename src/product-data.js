@@ -1,6 +1,6 @@
 export const ProductData = [
   {
-    id: 1,
+    id: '1',
     name: 'Basic',
     price: '$100',
     location: 'Yaba, Lagos',
@@ -10,7 +10,7 @@ export const ProductData = [
     bathroom: '1',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Regular',
     price: '$100',
     location: 'Shomolu, Lagos',
@@ -20,7 +20,7 @@ export const ProductData = [
     bathroom: '1'
   },
   {
-    id: 3,
+    id: '3',
     name: 'Premium',
     price: '$200',
     location: 'Surulere, Lagos',
@@ -30,7 +30,7 @@ export const ProductData = [
     bathroom: '2'
   },
   {
-    id: 4,
+    id: '4',
     name: 'Deluxe',
     price: '$300',
     location: 'Ikeja, Lagos',
@@ -40,7 +40,7 @@ export const ProductData = [
     bathroom: '3'
   },
   {
-    id: 5,
+    id: '5',
     name: 'Luxury',
     price: '$400',
     location: 'Victoria Island, Lagos',
@@ -50,7 +50,7 @@ export const ProductData = [
     bathroom: '4'
   },
   {
-    id: 6,
+    id: '6',
     name: 'Super Luxury',
     price: '$500',
     location: 'Ajah, Lagos',

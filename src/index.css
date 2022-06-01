@@ -11,6 +11,10 @@
   --transition-time: all 1s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,4 +32,9 @@ h4, h5, h6 {
 
 a {
   text-decoration: none;
+  color: var(--color-primary);
+}
+
+a:active {
+  color: var(--color-primary);
 }

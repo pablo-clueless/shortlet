@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Stack, Typography } from '@mui/material'
 
-import useStyles from './styles'
+import useStyles from '../styles'
 
 const ProductCard = ({ id, name, price, location, image, living_room, bedroom, bathroom }) => {
   const classes = useStyles()
 
   return (
-    <Link to={`/product/${id}`}>
-      <Card className={classes.productCard}>
+    <Link to={`/products/${id}`}>
+      <div className={classes.productCard}>
         <img src={image} alt={name} />
         <Stack direction='column' my={1} px={1}>
           <Typography variant="h6">{name}</Typography>
@@ -21,7 +21,7 @@ const ProductCard = ({ id, name, price, location, image, living_room, bedroom, b
             <Typography variant="subtitle1">Bathroom: {bathroom}</Typography>
           </Stack>
         </Stack>
-      </Card>
+      </div>
     </Link>
   )
 }

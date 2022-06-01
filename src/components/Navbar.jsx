@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Toolbar } from '@mui/material'
 
-import useStyles from './styles'
+import useStyles from '../styles'
 import HamburgerMenu from './HamburgerMenu'
 import logo from '../logo.png'
+
+const menus = ['bookings', 'locations', 'about', 'contact']
 
 const Navbar = () => {
   const classes = useStyles()
@@ -12,33 +15,14 @@ const Navbar = () => {
     <nav className={classes.nav}>
       <Toolbar className={classes.toolbar}>
         <img src={logo} alt="logo" />
-
-        <ul className={classes.navList}>
-          <li>
-            <a href="#" className={classes.navItem}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" className={classes.navItem}>
-              Locations
-            </a>
-          </li>
-          <li>
-            <a href="#" className={classes.navItem}>
-              Become an Agent
-            </a>
-          </li>
-          <li>
-            <a href="#" className={classes.navItem}>
-              About Us
-            </a>
-          </li>
-          <li>
-            <Button variant='contained'>
-              Contact Us
-            </Button>
-          </li>
+        <ul>
+          {menus.map(menu => (
+            <li key={menu}>
+              <Link to={`/${menu}`}>
+                {menu}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <HamburgerMenu />

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button, IconButton, Menu, MenuItem} from '@mui/material'
 import { MoreVert } from '@mui/icons-material'
 
-import useStyles from './styles'
+import useStyles from '../styles'
+
+const menus = ['bookings', 'locations', 'about', 'contact']
 
 const HamburgerMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -19,15 +22,13 @@ const HamburgerMenu = () => {
       <MoreVert/>
     </IconButton>
     <Menu className={classes.menu} anchorEl={anchorEl} open={open} onClose={() => setAnchorEl(null)}>
-      <MenuItem onClick={() => setAnchorEl(null)}>Home</MenuItem>
-      <MenuItem onClick={() => setAnchorEl(null)}>Locations</MenuItem>
-      <MenuItem onClick={() => setAnchorEl(null)}>Becaome an Agent</MenuItem>
-      <MenuItem onClick={() => setAnchorEl(null)}>About Us</MenuItem>
-      <MenuItem onClick={() => setAnchorEl(null)}>
-        <Button variant='contained'>
-          Contact Us
-        </Button>
-      </MenuItem>
+      {menus.map(menu => (
+        <MenuItem key={menu} onClick={() => setAnchorEl(null)}>
+          <Link to={`/${menu}`}>
+            {menu}
+          </Link>
+        </MenuItem>
+      ))}
     </Menu>
     </div>
   )
