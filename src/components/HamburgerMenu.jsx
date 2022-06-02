@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, IconButton, Menu, MenuItem} from '@mui/material'
-import { MoreVert } from '@mui/icons-material'
+import { Icon } from '@iconify/react'
 
 import useStyles from '../styles'
 
@@ -19,7 +19,7 @@ const HamburgerMenu = () => {
   return (
     <div className={classes.menuButton}>
     <IconButton onClick={handleClick}>
-      <MoreVert/>
+      <Icon icon='healthicons:ui-menu-outline' />
     </IconButton>
     <Menu className={classes.menu} anchorEl={anchorEl} open={open} onClose={() => setAnchorEl(null)}>
       {menus.map(menu => (
