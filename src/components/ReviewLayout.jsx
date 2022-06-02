@@ -16,7 +16,7 @@ const ReviewLayout = () => {
       <Typography variant="h6">
         Shortlet is committed to providing you with the best experience possible.
       </Typography>
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} my={2}>
+      <Stack direction={{ xs: 'column', sm: 'row' }} alignItems='center' spacing={4} my={2}>
         {reviews.map(review => (
           <ReviewCard key={review.id} {...review} />
         ))}

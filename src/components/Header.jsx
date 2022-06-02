@@ -22,8 +22,8 @@ const Header = () => {
         <Typography variant='h2' color='textPrimary'>
           Affordable Most Reliable
         </Typography>
-        <Typography variant='h2' color='textSecondary' gutterBottom>
-          Short-let in Nigeria
+        <Typography variant='h2' color='textPrimary' gutterBottom>
+          Short-let in Lagos.
         </Typography>
         <Typography variant='body1'>
           We are a reliable short-let company that offers short-let services in Nigeria.

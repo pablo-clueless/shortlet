@@ -4,6 +4,7 @@
   --color-primary: #8484F0;
   --color-primary-dark: #3E4AAD;
   --color-secondary: #757575;
+  --color-mid: #F6F6F9;
   --color-light: #FFF;
   --color-dark: #000;
   --font-body: 'Inter', sans-serif;
@@ -22,6 +23,7 @@
 }
 
 body {
+  background: var(--color-mid);
   font-family: var(--font-body);
 }
 

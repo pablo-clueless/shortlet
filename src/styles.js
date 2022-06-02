@@ -30,6 +30,7 @@ export default makeStyles(theme => ({
   },
   datePicker: {
     '& .MuiInputBase-input': {
+      width: '50%',
       color: 'var(--color-primary)',
       height: '50px',
       border: '1px solid var(--color-primary)',
@@ -48,7 +49,7 @@ export default makeStyles(theme => ({
       width: '90%'
     },
     '@media screen and (min-width: 1270px)': {
-      width: '60%'
+      width: '50%'
     }
   },
   /*
@@ -119,12 +120,15 @@ export default makeStyles(theme => ({
   },
   header: {
     width: '100%',
-    height: '90vh',
+    height: '94vh',
+    display: 'grid',
+    placeItems: 'center',
     marginTop: '64px',
+    background: 'url(https://images.unsplash.com/photo-1528908929486-dfaa209c6986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80) no-repeat center/cover',
   },
    /*
   *================
-  * Products
+  * Layout and Cards
   * ===============
   */
   layout: {
@@ -151,25 +155,12 @@ export default makeStyles(theme => ({
       }
     }
   },
-   /*
-  *================
-  * Reviews
-  * ===============
-  */
   reviewCard: {
     display: 'grid',
     placeItems: 'center',
-    borderRadius: '5px',
-    padding: '1rem 0',
+    borderRadius: '10px',
+    padding: '1rem 2rem',
     margin: '1rem 0',
-    '&:nth-child(odd)': {
-      backgroundColor: 'var(--color-primary)',
-      background: 'linear-gradient(to top right, var(--color-light) 30%, var(--color-primary-dark))',
-    },
-    '&:nth-child(even)': {
-      backgroundColor: 'var(--color-primary)',
-      background: 'linear-gradient(to bottom right, var(--color-light) 30%, var(--color-primary-dark))',
-    }
   },
   /*
   *================
@@ -178,7 +169,7 @@ export default makeStyles(theme => ({
   */
   footer: {
     backgroundColor: 'var(--color-primary)',
-    background: 'linear-gradient(to bottom, var(--color-light) 30%, var(--color-primary))',
+    background: 'linear-gradient(to bottom, var(--color-mid) 30%, var(--color-primary))',
   },
   /*
   *================
@@ -231,6 +222,20 @@ export default makeStyles(theme => ({
     position: 'fixed',
     top: 0,
     left: 0,
-    backdropFilter: 'blur(2px)',
+    backdropFilter: 'blur(3px)',
   },
+  modal: {
+    display: 'grid',
+    placeItems: 'center',
+    width: '40%',
+    '@media screen and (max-width: 1000px)': {
+      width: '50%'
+    },
+    '@media screen and (max-width: 763px)': {
+      width: '70%'
+    },
+    '@media screen and (max-width: 550px)': {
+      width: '90%'
+    },
+  }
 }))

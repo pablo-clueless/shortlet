@@ -22,14 +22,19 @@ const Bookings = () => {
   const [data, setData] = useState({})
 
   useEffect(() => {
-    let total = 0
+    let subtotal = 0
     if (product !== ' ') {
-      total = products.find(p => p.name === product)?.price * quantity
+      subtotal = products.find(p => p.name === product)?.price * quantity
     }
-    setTotal(total)
+    let serviceCharge = 0
+    if (subtotal > 0) {
+      serviceCharge = subtotal * 0.1
+    }
+    setTotal(subtotal + serviceCharge)
   },[quantity, product])
 
   const handleReset = () => {
+    setName('')
     setEmail('')
     setLocation(' ')
     setDate('')
@@ -48,9 +53,14 @@ const Bookings = () => {
     dispatch(openModal())
   }
   
+  const handleBooking = () => {
+    alert('Booking Successful')
+    handleReset()
+  }
+  
   return (
     <>
-    {isOpen && (<Modal data={data} />)}
+    {isOpen && (<Modal data={data} handleBooking={handleBooking} />)}
     <Stack direction='column' spacing={2} mt={12} px={2}>
       <Typography variant='h3'>
         Book a Short-let
@@ -85,9 +95,14 @@ const Bookings = () => {
         </Stack>
         <InputBase classes={{ root: classes.datePicker }} type='date' value={date} onChange={(e) => setDate(e.target.value)} />
         <Stack direction='row' alignItems='center' justifyContent='space-between'>
+          <Stack direction={{ xs: 'column', sm: 'row' }} alignItems='center' spacing={1}>
           <Typography variant='h5'>
             Total: ${total}
           </Typography>
+          <Typography variant='caption'>
+            (inclusive of 10% service charge)
+          </Typography>
+          </Stack>
           <Button type='button' variant='outlined' onClick={handleReset}>
             Reset
           </Button>
