@@ -25,10 +25,10 @@ const Header = () => {
         <Typography variant='h2' color='textPrimary' gutterBottom>
           Short-let in Lagos.
         </Typography>
-        <Typography variant='body1'>
+        <Typography variant='body1' color='var(--color-info)'>
           We are a reliable short-let company that offers short-let services in Nigeria.
         </Typography>
-        <Typography variant='body1'>
+        <Typography variant='body1' color='var(--color-info)'>
         Find a variety of short-lets that suits you easily.
         </Typography>
         <Stack direction='row' alignItems='center' spacing={2} my={2}>

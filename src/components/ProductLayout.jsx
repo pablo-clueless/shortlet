@@ -12,7 +12,7 @@ const ProductLayout = () => {
       <Typography variant="h2">
         Closests to your location
       </Typography>
-      <Typography variant="h6">
+      <Typography variant="h6" color='var(--color-info)'>
         Find the best short-lets in your area
       </Typography>
       <Grid container spacing={2} mt={2}>

@@ -13,7 +13,7 @@ const ReviewCard = ({ name, image, date, rating, review }) => {
         <Typography variant='subtitle2'>
           {review}
         </Typography>
-        <Typography variant='body1'>
+        <Typography variant='body1' color='var(--color-warning)'>
           {name}
         </Typography>
         <Typography variant='caption'>

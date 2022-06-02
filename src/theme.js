@@ -25,14 +25,14 @@ export const theme = createTheme({
                     }
                 },
                 outlined: {
-                    backgroundColor: 'var(--color-light)',
-                    color: 'var(--color-primary)',
+                    backgroundColor: 'var(--color-cool)',
+                    color: 'var(--color-light)',
                     transition: '0.3s ease',
                     textTransform: 'capitalize',
                     '&:hover': {
                         transform: 'translateY(-5px)',
-                        backgroundColor: 'var(--color-light)',
-                        color: 'var(--color-primary)',
+                        backgroundColor: 'var(--color-cool-dark)',
+                        color: 'var(--color-light)',
                     }
                 }
             }
@@ -42,6 +42,6 @@ export const theme = createTheme({
         text: {
             primary: '#8484F0',
             secondary: '#757575',
-        }
+        },
     }
 })

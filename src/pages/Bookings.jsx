@@ -61,7 +61,7 @@ const Bookings = () => {
   return (
     <>
     {isOpen && (<Modal data={data} handleBooking={handleBooking} />)}
-    <Stack direction='column' spacing={2} mt={12} px={2}>
+    <Stack className={classes.bookingsPage} direction='column' spacing={2} mt={12} px={2}>
       <Typography variant='h3'>
         Book a Short-let
       </Typography>
