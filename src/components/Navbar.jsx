@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Toolbar } from '@mui/material'
+import { Toolbar } from '@mui/material'
 
 import useStyles from '../styles'
 import HamburgerMenu from './HamburgerMenu'

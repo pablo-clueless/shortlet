@@ -93,7 +93,7 @@ const Bookings = () => {
             ))}
           </Select>
         </Stack>
-        <InputBase classes={{ root: classes.datePicker }} type='date' value={date} onChange={(e) => setDate(e.target.value)} />
+        <InputBase className={classes.datePicker} type='date' value={date} onChange={(e) => setDate(e.target.value)} />
         <Stack direction='row' alignItems='center' justifyContent='space-between'>
           <Stack direction={{ xs: 'column', sm: 'row' }} alignItems='center' spacing={1}>
           <Typography variant='h5'>

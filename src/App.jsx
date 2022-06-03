@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material'
 
 import { Bookings, Home, Notfound, Product, Search } from './pages'
 import { theme } from './theme'
-import { Navbar } from './components'
+import { Footer, Navbar } from './components'
 
 const App = () => {
 
@@ -18,6 +18,7 @@ const App = () => {
         <Route path='/search' element={<Search />} />
         <Route path='/*' element={<Notfound />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   )
 }

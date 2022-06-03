@@ -7,6 +7,7 @@ import { ProductData as products } from '../product-data'
 
 const ProductLayout = () => {
   const classes = useStyles()
+  
   return (
     <section className={classes.layout}>
       <Typography variant="h2">
