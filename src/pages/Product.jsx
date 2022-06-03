@@ -14,7 +14,7 @@ const Product = () => {
   return (
     <Stack className={classes.product} direction='column' spacing={2} mt={12} px={2}>
       <Typography variant='h3'>
-        {product.name}
+        {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
       </Typography>
       <img src={product.image} alt={product.name} />
       <Typography variant='h5'>
