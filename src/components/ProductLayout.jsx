@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material'
 
 import ProductCard from './ProductCard'
 import useStyles from '../styles'
-import { ProductData as products } from '../product-data'
+import { ProductData as products } from '../data'
 
 const ProductLayout = () => {
   const classes = useStyles()

@@ -7,7 +7,7 @@ const Notfound = () => {
   return (
     <Stack direction='column' textAlign='center' mt={36}>
       <Typography variant='h3'>
-        404
+        This page is under construction.
       </Typography>
       <Typography variant='body1' mb={6}>
         No short-lets here, let's go back home.

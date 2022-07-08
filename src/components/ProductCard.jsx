@@ -8,7 +8,7 @@ const ProductCard = ({ id, name, price, location, image, living_room, bedroom, b
   const classes = useStyles()
 
   return (
-    <Link to={`/products/${id}`}>
+    <Link to={`/location/${id}`}>
       <div className={classes.productCard}>
         <img src={image} alt={name} />
         <Stack direction='column' my={1} px={1}>

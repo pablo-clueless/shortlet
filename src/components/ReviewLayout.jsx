@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack, Typography } from '@mui/material'
 
 import useStyles from '../styles'
-import { ReviewData as reviews } from '../review-data'
+import { ReviewData as reviews } from '../data'
 import ReviewCard from './ReviewCard'
 
 const ReviewLayout = () => {
