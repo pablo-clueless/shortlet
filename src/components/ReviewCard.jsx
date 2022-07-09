@@ -11,7 +11,7 @@ const ReviewCard = ({ name, image, date, rating, review }) => {
       <Avatar src={image} sx={{ width: 100, height: 100, margin: '1rem 0' }} />
       <Stack direction='column' spacing={2}>
         <Typography variant='subtitle2'>
-          {review}
+          {review.substring(0,100)}
         </Typography>
         <Typography variant='body1' color='var(--color-warning)'>
           {name}

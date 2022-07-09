@@ -1,19 +1,21 @@
 import React from 'react'
-import { Grid, Typography } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 
 import ProductCard from './ProductCard'
 import useStyles from '../styles'
-import { ProductData as products } from '../product-data'
+import { ProductData as products } from '../data'
+import { useTheme } from '../contexts/ThemeProvider'
 
 const ProductLayout = () => {
   const classes = useStyles()
+  const { theme } = useTheme()
   
   return (
-    <section className={classes.layout}>
-      <Typography variant="h2">
-        Closests to your location
+    <Container className={classes.layout} style={{backgroundColor: theme === 'light' ? '#fff' : '#757575'}}>
+      <Typography variant="h4">
+        Check out our exclusive shortlets across Lagos
       </Typography>
-      <Typography variant="h6" color='var(--color-info)'>
+      <Typography variant="body1" color='var(--color-info)'>
         Find the best short-lets in your area
       </Typography>
       <Grid container spacing={2} mt={2}>
@@ -23,7 +25,7 @@ const ProductLayout = () => {
           </Grid>
         ))}
       </Grid>
-    </section>
+    </Container>
   )
 }
 

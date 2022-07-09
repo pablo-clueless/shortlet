@@ -6,52 +6,6 @@ export default makeStyles(theme => ({
   * Global Styles
   * ===============
   */
-  inputField: {
-    '& .MuiInputBase-input': {
-      color: 'var(--color-primary)'
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        height: '60px',
-        color: 'var(--color-primary)',
-        borderColor: 'var(--color-primary)',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--mid)',
-      }
-    },
-    '& .MuiFormLabel-root': {
-      color: 'var(--color-primary)',
-      fontWeight: 400,
-      '&.MuiFormLabel-root.Mui-focused': {
-        color: 'var(--color-primary)'
-      }
-    }
-  },
-  datePicker: {
-    '& .MuiInputBase-input': {
-      width: '50%',
-      color: 'var(--color-primary)',
-      height: '50px',
-      border: '1px solid var(--color-primary)',
-      borderRadius: '5px',
-      padding: '0 0.75rem',
-      cursor: 'pointer',
-    },
-  },
-  form: {
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    margin: '1rem 0',
-    '@media screen and (max-width: 800px)': {
-      width: '90%'
-    },
-    '@media screen and (min-width: 1270px)': {
-      width: '50%'
-    }
-  },
   /*
   *================
   * Navbar
@@ -62,7 +16,6 @@ export default makeStyles(theme => ({
     position: 'fixed',
     top: 0,
     left: 0,
-    background: 'var(--color-light)',
     zIndex: 3,
     '& ul': {
       display: 'flex',
@@ -115,7 +68,7 @@ export default makeStyles(theme => ({
     },
     '& a': {
       textTransform: 'capitalize',
-      margin: '0 2rem'
+      margin: '0 2rem',
     }
   },
   header: {
@@ -126,15 +79,26 @@ export default makeStyles(theme => ({
     marginTop: '64px',
     background: 'url(https://images.unsplash.com/photo-1528908929486-dfaa209c6986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80) no-repeat center/cover',
   },
+  activeLink: {
+    background: theme.palette.text.secondary,
+    padding: '0.25rem 0.5rem',
+    borderRadius:'7px',
+  },
    /*
   *================
   * Layout and Cards
   * ===============
   */
   layout: {
-    padding: '0 1rem',
-    margin: '4rem 0',
+    padding: '2rem 1.5rem',
     textAlign: 'center',
+  },
+  reviewLayout: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: '1rem',
+    marginTop: '1rem',
   },
   productCard: {
     height: '400px',
@@ -146,6 +110,7 @@ export default makeStyles(theme => ({
       width: '100%',
       objectFit: 'cover',
       borderRadius: '5px',
+      transition: 'var(--transition-time)',
       opacity: 0.7,
     },
     '&:hover': {
@@ -156,11 +121,23 @@ export default makeStyles(theme => ({
     }
   },
   reviewCard: {
+    width: 300,
+    minHeight: 350,
     display: 'grid',
     placeItems: 'center',
     borderRadius: '10px',
     padding: '1rem 2rem',
     margin: '1rem 0',
+  },
+  result: {
+    position: 'fixed',
+    top: '50%',
+    left: '70%',
+    transform: 'translate(-50%, -50%)',
+    width: '200px',
+    padding: '1rem',
+    zIndex: 2,
+    borderRadius: '5px',
   },
   /*
   *================
@@ -168,8 +145,9 @@ export default makeStyles(theme => ({
   * ===============
   */
   footer: {
-    backgroundColor: 'var(--color-primary)',
-    background: 'linear-gradient(to bottom, var(--color-mid) 30%, var(--color-primary))',
+    paddingTop: 10,
+    padding: '0 1rem',
+    // background: 'linear-gradient(to bottom, var(--color-mid) 30%, var(--color-primary))',
   },
   /*
   *================
@@ -186,27 +164,82 @@ export default makeStyles(theme => ({
   * InputField
   * ==============
   */
-  root: {
-    '& .MuiInputBase-input': {
-      color: 'var(--color-primary)'
+  form: {
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    margin: '1rem 0',
+    '@media screen and (max-width: 800px)': {
+      width: '90%'
     },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        height: '50px',
-        color: 'var(--color-primary)',
-        borderColor: 'var(--color-primary)',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--color-primary-dark)',
-      }
-    },
-    '& .MuiFormLabel-root': {
-      color: 'var(--color-primary)',
-      fontWeight: 400,
-      '&.MuiFormLabel-root.Mui-focused': {
-        color: 'var(--color-primary)'
-      }
+    '@media screen and (min-width: 1270px)': {
+      width: '50%'
     }
+  },
+  formControl: {
+    height: 45,
+    border: `thin solid ${theme.palette.text.primary}`,
+    borderRadius: '5px',
+    position: 'relative',
+    transition: 'var(--transition-time)',
+    '&:focus-within': {
+      borderColor: theme.palette.text.secondary,
+    },
+    '& input': {
+      width: '100%',
+      height: '100%',
+      background: 'transparent',
+      color: theme.palette.text.primary,
+      padding: '0 1rem',
+      borderRadius: '5px',
+      border: 0,
+      outline: 'none',
+    },
+    '& textarea': {
+      width: '100%',
+      height: '100%',
+      background: 'transparent',
+      color: theme.palette.text.primary,
+      padding: '1rem',
+      borderRadius: '5px',
+      border: 0,
+      outline: 'none',
+      resize: 'none',
+    },
+    '& select': {
+      width: '100%',
+      height: '100%',
+      background: 'transparent',
+      color: theme.palette.text.primary,
+      padding: '0 1rem',
+      borderRadius: '5px',
+      border: 0,
+      outline: 'none',
+      '& option': {
+        background: 'transparent',
+        textTransform: 'capitalize',
+        height: '20px',
+        padding: '0.5rem 1rem',
+        margin: '1rem 0'
+      },
+    },
+    '& label': {
+      color: theme.palette.text.primary,
+      fontSize: '1rem',
+      fontWeight: 'bold',
+      position: 'absolute',
+      top: '-25%',
+      left: '2%',
+      padding: '0 0.5rem',
+    }
+  },
+  ratings: {
+    display:'flex',
+    alignItems:'center',
+    border: `thin solid ${theme.palette.text.primary}`,
+    borderRadius: '5px',
+    padding: '0.5rem 1rem',
   },
   /*
   * ==============
@@ -249,5 +282,37 @@ export default makeStyles(theme => ({
     '@media screen and (max-width: 550px)': {
       width: '90%'
     },
-  }
+  },
+  /*
+  * ==============
+  *  Search Page
+  * ==============
+  */
+  searchPage: {
+    width: '100%',
+    height: '90vh',
+    background: 'url(https://images.unsplash.com/photo-1526887593587-a307ea5d46b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) no-repeat center/cover',
+    display: 'grid',
+    placeItems: 'center',
+    overflowY: 'scroll',
+    marginTop: '5rem',
+  },
+  results: {
+    padding: '1rem 2rem',
+    marginTop: '2rem',
+    display: 'grid',
+    width: '40%',
+    textAlign: 'left',
+  },
+    /*
+  * ==============
+  * About Page
+  * ==============
+  */
+ aboutPage: {
+    width: '100%',
+    display: 'grid',
+    placeItems: 'center',
+    marginTop: '5rem',
+ },
 }))

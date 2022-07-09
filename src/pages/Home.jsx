@@ -1,15 +1,16 @@
 import React from 'react'
+import { Stack } from '@mui/material'
 
 import { Header, ProductLayout, ReviewLayout } from '../components'
 
 const Home = () => {
 
   return (
-    <>
-    <Header />
-    <ProductLayout />
-    <ReviewLayout />
-    </>
+    <Stack>
+      <Header />
+      <ProductLayout />
+      <ReviewLayout />
+    </Stack>
   )
 }
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Stack, Typography } from '@mui/material'
+import { Button, Stack, Typography } from '@mui/material'
 
-import { ProductData as products } from '../product-data'
+import { ProductData as products } from '../data'
 import useStyles from '../styles'
 
 const Product = () => {
@@ -12,7 +12,7 @@ const Product = () => {
   const product = products.find(product => product.id === id)
 
   return (
-    <Stack className={classes.product} direction='column' spacing={2} mt={12} px={2}>
+    <Stack className={classes.product} direction='column' spacing={2} mt={12} p={2} >
       <Typography variant='h3'>
         {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
       </Typography>
@@ -33,6 +33,14 @@ const Product = () => {
         <Typography variant='h6'>
           Bathroom: {product.bathroom}
         </Typography>
+      </Stack>
+      <Stack direction='row' spacing={4}>
+        <Button variant='contained'>
+          Book Now
+        </Button>
+        <Button variant='contained'>
+          Contact
+        </Button>
       </Stack>
     </Stack>
   )
