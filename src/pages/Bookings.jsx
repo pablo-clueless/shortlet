@@ -78,17 +78,17 @@ const Bookings = () => {
         Book a Short-let
       </Typography>
       <form className={classes.form} onSubmit={handlePreview}>
-       <InputField label='Name' type='text' name='name' onChange={handleChange} fullWidth />
-       <InputField label='Email' type='email' name='email' onChange={handleChange} fullWidth />
+       <InputField label='Name' type='text' name='name' onChange={handleChange} fullWidth labelBg='#E9E8E4' />
+       <InputField label='Email' type='email' name='email' onChange={handleChange} fullWidth labelBg='#E9E8E4' />
 
        <Stack direction={{xs:'column',sm:'row',md:'row'}} spacing={2}>
-        <InputField label='Location' type='select' name='location' onChange={handleChange} data={locations} />
-        <InputField label='Products' type='select' name='product' onChange={handleChange} data={products} />
+        <InputField label='Location' type='select' name='location' onChange={handleChange} data={locations} labelBg='#E9E8E4' />
+        <InputField label='Products' type='select' name='product' onChange={handleChange} data={products} labelBg='#E9E8E4' />
        </Stack>
 
        <Stack direction={{xs:'column',sm:'row',md:'row'}} spacing={2}>
-        <InputField label='Date' type='date' name='date' onChange={handleChange} />
-        <InputField label='No of Nights' type='select' name='quantity' onChange={handleChange} data={quantity} />
+        <InputField label='Date' type='date' name='date' onChange={handleChange} labelBg='#E9E8E4' />
+        <InputField label='No of Nights' type='select' name='quantity' onChange={handleChange} data={quantity} labelBg='#E9E8E4' />
        </Stack>
 
         <Stack direction='row' alignItems='center' justifyContent='space-between'>

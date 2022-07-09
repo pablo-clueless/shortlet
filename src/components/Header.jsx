@@ -49,7 +49,7 @@ const Header = () => {
         Find a variety of short-lets that suits you easily.
         </Typography>
         <Stack direction='row' alignItems='center' spacing={2} my={2}>
-          <InputField type='text' label='Search' value={search} onChange={onSearch} placeholder='Search shortlets by location' />
+          <InputField type='text' label='Search' value={search} onChange={onSearch} placeholder='Search shortlets by location' labelBg='' />
         </Stack>
         <Stack direction='row' spacing={2} textAlign='center'>
             <Stack direction='column'>

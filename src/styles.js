@@ -205,7 +205,6 @@ export default makeStyles(theme => ({
       },
     },
     '& label': {
-      background: '',
       color: theme.palette.text.primary,
       fontSize: '1rem',
       fontWeight: 'bold',
