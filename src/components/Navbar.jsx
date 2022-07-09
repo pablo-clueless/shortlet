@@ -33,7 +33,7 @@ const Navbar = () => {
           <ul>
             {menus.map(menu => (
               <li key={menu}>
-                <NavLink to={`/${menu}`} className={({isActive}) => isActive ? classes.link : ''}>
+                <NavLink to={`/${menu}`} className={({isActive}) => isActive ? classes.activeLink : ''}>
                   {menu}
                 </NavLink>
               </li>

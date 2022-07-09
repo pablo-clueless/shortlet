@@ -22,7 +22,14 @@ export const lightTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--color-primary)",
+          backgroundColor: "var(--color-light)",
+        }
+      }
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          padding: '1rem 2rem',
         }
       }
     },

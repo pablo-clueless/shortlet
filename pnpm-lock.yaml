@@ -18,6 +18,7 @@ specifiers:
   react-dom: ^17.0.2
   react-redux: ^8.0.1
   react-router-dom: ^6.3.0
+  uuid: ^8.3.2
   vite: ^2.9.0
 
 dependencies:
@@ -32,6 +33,7 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-redux: 8.0.2_kjz6oiutujpem552nf4sec7ree
   react-router-dom: 6.3.0_sfoxds7t5ydpegc3knd667wn6m
+  uuid: 8.3.2
   vite: 2.9.14
 
 devDependencies:
@@ -2353,6 +2355,11 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 17.0.2
+    dev: false
+
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
     dev: false
 
   /v8-compile-cache/2.3.0:

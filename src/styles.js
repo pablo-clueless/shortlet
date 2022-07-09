@@ -26,7 +26,7 @@ export default makeStyles(theme => ({
         display: 'none'
       },
       '& a': {
-        color: '#fff',
+        color: 'var(--color-primary)',
         textDecoration: 'none',
         textTransform: 'capitalize',
         fontSize: '1.2rem',
@@ -79,8 +79,8 @@ export default makeStyles(theme => ({
     marginTop: '64px',
     background: 'url(https://images.unsplash.com/photo-1528908929486-dfaa209c6986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80) no-repeat center/cover',
   },
-  link: {
-    background: 'var(--color-secondary)',
+  activeLink: {
+    background: theme.palette.text.secondary,
     padding: '0.25rem 0.5rem',
     borderRadius:'7px',
   },
@@ -92,6 +92,13 @@ export default makeStyles(theme => ({
   layout: {
     padding: '2rem 1.5rem',
     textAlign: 'center',
+  },
+  reviewLayout: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: '1rem',
+    marginTop: '1rem',
   },
   productCard: {
     height: '400px',
@@ -114,6 +121,8 @@ export default makeStyles(theme => ({
     }
   },
   reviewCard: {
+    width: 300,
+    minHeight: 350,
     display: 'grid',
     placeItems: 'center',
     borderRadius: '10px',
@@ -187,6 +196,17 @@ export default makeStyles(theme => ({
       border: 0,
       outline: 'none',
     },
+    '& textarea': {
+      width: '100%',
+      height: '100%',
+      background: 'transparent',
+      color: theme.palette.text.primary,
+      padding: '1rem',
+      borderRadius: '5px',
+      border: 0,
+      outline: 'none',
+      resize: 'none',
+    },
     '& select': {
       width: '100%',
       height: '100%',
@@ -213,6 +233,13 @@ export default makeStyles(theme => ({
       left: '2%',
       padding: '0 0.5rem',
     }
+  },
+  ratings: {
+    display:'flex',
+    alignItems:'center',
+    border: `thin solid ${theme.palette.text.primary}`,
+    borderRadius: '5px',
+    padding: '0.5rem 1rem',
   },
   /*
   * ==============
@@ -255,5 +282,37 @@ export default makeStyles(theme => ({
     '@media screen and (max-width: 550px)': {
       width: '90%'
     },
-  }
+  },
+  /*
+  * ==============
+  *  Search Page
+  * ==============
+  */
+  searchPage: {
+    width: '100%',
+    height: '90vh',
+    background: 'url(https://images.unsplash.com/photo-1526887593587-a307ea5d46b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) no-repeat center/cover',
+    display: 'grid',
+    placeItems: 'center',
+    overflowY: 'scroll',
+    marginTop: '5rem',
+  },
+  results: {
+    padding: '1rem 2rem',
+    marginTop: '2rem',
+    display: 'grid',
+    width: '40%',
+    textAlign: 'left',
+  },
+    /*
+  * ==============
+  * About Page
+  * ==============
+  */
+ aboutPage: {
+    width: '100%',
+    display: 'grid',
+    placeItems: 'center',
+    marginTop: '5rem',
+ },
 }))

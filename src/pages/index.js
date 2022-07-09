@@ -1,3 +1,4 @@
+export { default as About } from './About'
 export { default as Bookings } from './Bookings'
 export { default as Home } from './Home'
 export { default as Location } from './Location'
