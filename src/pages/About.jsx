@@ -42,7 +42,7 @@ const About = () => {
             <Typography variant='h4' color='text.primary'>
                 About Shortlet
             </Typography>
-            <Typography variant='body1' color='text.secondary'>
+            <Typography variant='body1'>
                 Shortlet is an online marketplace that connects people who want to rent out their homes with people who are looking for accommodations in specific locales, for lodging, primarily homestays for vacation rentals, and tourism activities. Based in Lagos, the platform is accessible via website . Inspect properties, choose from a wide range of options that meet your needs and pocket.
             </Typography>
         </Stack>
