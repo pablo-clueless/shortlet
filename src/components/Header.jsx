@@ -1,43 +1,55 @@
 import React, { useState } from 'react'
-import { Button, Stack, TextField, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Alert, Card, Container, Stack, Typography } from '@mui/material'
 
-import { InputField, Navbar } from './index'
+import { InputField } from './index'
+import { LocationList as locations } from '../data'
 import useStyles from '../styles'
 
 const Header = () => {
   const classes = useStyles()
   const [search, setSearch] = useState('')
+  const [result, setResult] = useState([])
+  const [error, setError] = useState(null)
 
-  const handleSearch = (e) => {
-    e.preventDefault()
-    
-    if(!search) return alert('Please enter a search term')
-    console.log(search)
-    setSearch('')
+  const getQuery = async(text) => {
+    try {
+      const res = locations.filter(location => location.toLowerCase().includes(text.toLowerCase()))
+      if(!text || text === '') setResult([])
+      if(res.length) setResult(res)
+    } catch (error) {}
   }
 
+  const onSearch = (e) => {
+    e.preventDefault()
+
+    setSearch(e.target.value)
+    getQuery(e.target.value)
+  }
+
+  const clearError = () => setError(null)
+
   return (
-    <header className={classes.header}>
+    <>
+    {error && (<Alert severity='error' style={{position:'absolute',top:'10%',left:'40%',zIndex:3}} onClose={clearError}>
+      {error}
+      </Alert>)}
+    <Container className={classes.header}>
       <Stack direction='column' mt={12} px={2}>
-        <Typography variant='h2' color='textPrimary'>
+        <Typography variant='h2' color='text.primary'>
           Affordable Most Reliable
         </Typography>
-        <Typography variant='h2' color='textPrimary' gutterBottom>
+        <Typography variant='h2' color='text.primary' gutterBottom>
           Short-let in Lagos.
         </Typography>
-        <Typography variant='body1' color='var(--color-info)'>
+        <Typography variant='body1' color='text.info'>
           We are a reliable short-let company that offers short-let services in Nigeria.
         </Typography>
-        <Typography variant='body1' color='var(--color-info)'>
+        <Typography variant='body1' color='text.info'>
         Find a variety of short-lets that suits you easily.
         </Typography>
         <Stack direction='row' alignItems='center' spacing={2} my={2}>
-          <form className={classes.form} onSubmit={handleSearch}>
-            <InputField className={classes.inputField} type='text' label='Search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for short-lets' />
-            <Button type='submit' variant='contained'>
-              Search
-            </Button>
-          </form>
+          <InputField type='text' label='Search' value={search} onChange={onSearch} placeholder='Search shortlets by location' />
         </Stack>
         <Stack direction='row' spacing={2} textAlign='center'>
             <Stack direction='column'>
@@ -66,7 +78,8 @@ const Header = () => {
             </Stack>
           </Stack>
       </Stack>
-    </header>
+    </Container>
+    </>
   )
 }
 

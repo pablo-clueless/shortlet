@@ -6,7 +6,7 @@ import { LocationList as locations } from '../data'
 
 const Location = () => {
   return (
-    <Stack direction='column' spacing={4} mt={12} px={2}>
+    <Stack direction='column' spacing={4} mt={12} p={2}>
         {locations.map((location, index) => (
             <Stack key={index} direction='row' alignItems='center' justifyContent='space-between' spacing={2}>
                 <Typography variant='h5'>

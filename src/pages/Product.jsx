@@ -12,7 +12,7 @@ const Product = () => {
   const product = products.find(product => product.id === id)
 
   return (
-    <Stack className={classes.product} direction='column' spacing={2} mt={12} px={2}>
+    <Stack className={classes.product} direction='column' spacing={2} mt={12} p={2} >
       <Typography variant='h3'>
         {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
       </Typography>

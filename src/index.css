@@ -4,6 +4,7 @@
   --color-primary: #8484F0;
   --color-primary-dark: #3E4AAD;
   --color-secondary: #757575;
+  --color-secondary-dark: #252530;
   --color-warning:#FF81B1;
   --color-warning-dark: #FF4A6E;
   --color-info: #008BD2;
@@ -13,7 +14,7 @@
   --color-dark: #000;
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Ubuntu', sans-serif;
-  --transition-time: all 1s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-time: 0.5s all ease;
 }
 
 ::-webkit-scrollbar {

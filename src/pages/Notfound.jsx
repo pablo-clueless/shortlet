@@ -5,7 +5,7 @@ import { Button, Stack, Typography } from '@mui/material'
 const Notfound = () => {
 
   return (
-    <Stack direction='column' textAlign='center' mt={36}>
+    <Stack direction='column' textAlign='center' mt={36} p={2}>
       <Typography variant='h3'>
         This page is under construction.
       </Typography>

@@ -9,7 +9,7 @@ const ProductCard = ({ id, name, price, location, image, living_room, bedroom, b
 
   return (
     <Link to={`/location/${id}`}>
-      <div className={classes.productCard}>
+      <Card className={classes.productCard}>
         <img src={image} alt={name} />
         <Stack direction='column' my={1} px={1}>
           <Typography variant="h6" textTransform='capitalize'>
@@ -21,7 +21,7 @@ const ProductCard = ({ id, name, price, location, image, living_room, bedroom, b
           <Typography variant="subtitle1">
             {location}
           </Typography>
-          <Stack direction='row' spacing={2} color='GrayText'>
+          <Stack direction='row' spacing={2} color='text.secondary'>
             <Typography variant="subtitle1">
               Living room: {living_room}
             </Typography>
@@ -33,7 +33,7 @@ const ProductCard = ({ id, name, price, location, image, living_room, bedroom, b
             </Typography>
           </Stack>
         </Stack>
-      </div>
+      </Card>
     </Link>
   )
 }
